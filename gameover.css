@@ -1,0 +1,55 @@
+body{
+    background-image: url("./assets/s.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.container{
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+}
+#congratulations{
+    color:papayawhip;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Licorice', cursive;
+}
+#exit{
+    text-align: center;
+    padding-top: 30px;
+}
+#scoreboard{
+    text-align: center;
+}
+.box{
+    background-color: rgb(30 213 231 / 70%);
+    margin-top: 15%;
+    width: fit-content;
+    margin-left: 35%;
+    padding:20px;
+    border-radius: 10px;
+}
+#playagain{
+    padding: 10px;
+    color:white;
+    background-color: green;
+    font-size:1.5rem;
+    border-radius: 5px;
+}
+#exitgame{
+    padding: 10px;
+    color:white;
+    background-color: red;
+    font-size:1.5rem;
+    border-radius: 5px;
+}
+#exit{
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    font-size:1.8rem;
+}

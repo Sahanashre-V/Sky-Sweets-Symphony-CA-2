@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+
+
+body{
+    background-image: url("./assets/saha.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    height: 40vh;
+    width: 25vw;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: 5px solid black;
+}
+
+#playbtn {
+    background-color: green;
+    color: white;
+    padding: 3px 10px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#topic {
+    font-size: 10rem;
+    font-family: 'Licorice', cursive;
+    -webkit-text-stroke: 1px rgb(0 33 255 / 45%);
+    color: black;
+    text-align: center;
+}
+
+#container{
+    height: 100vh;
+    width:100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+input {
+    font-size: 1.5rem;
+    width: 250px;
+    border-radius: 5px;
+    border: 3px solid black;
+}
