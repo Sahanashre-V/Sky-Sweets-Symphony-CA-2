@@ -6,7 +6,7 @@ let score = 0;
 //timer part
 let referenceTime = undefined;
 function ResetTime() {
-  let Time = 3;
+  let Time = 30;
   timer.innerText = Time;
   referenceTime = setInterval(() => {
     Time = Time - 1;
