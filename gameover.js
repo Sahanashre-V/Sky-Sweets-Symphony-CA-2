@@ -9,9 +9,31 @@ exitgame.addEventListener("click",function(){
 })
 
 let scorespan = document.getElementById("scorespan");
-let score = localStorage.getItem("score")
+let score = localStorage.getItem("score");
 if(score<=0){
     zeroscore.innerHTML = "Oops! You missed the sweetness!"
 }
 let playernameFromStorage = localStorage.getItem("playername")
 scorespan.innerText = playernameFromStorage + " your score is " + score;
+
+if (score>0){
+    createChocolateShower();
+    setInterval(createChocolateShower, 300);
+}
+
+function createChocolateShower() {
+    const chocolate = document.createElement('div');
+    chocolate.classList.add('chocolate');
+    
+    chocolate.style.left = Math.random() * 100 + "vw";
+    chocolate.style.animationDuration = Math.random() * 2 + 3 + "s";
+    
+    chocolate.innerText = '🍬';
+    
+    document.body.appendChild(chocolate);
+    
+    setTimeout(() => {
+                chocolate.remove();
+                }, 5000);
+  }
+  

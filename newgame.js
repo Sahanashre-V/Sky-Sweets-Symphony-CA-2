@@ -2,23 +2,24 @@ let timer = document.getElementById("time");
 let scorespan = document.getElementById("score");
 let timeoutId;
 let score = 0;
+
 //timer part
 let referenceTime = undefined;
 function ResetTime() {
-    let Time = 10;
+  let Time = 3;
+  timer.innerText = Time;
+  referenceTime = setInterval(() => {
+    Time = Time - 1;
     timer.innerText = Time;
-    referenceTime = setInterval(() => {
-      Time = Time - 1;
-      timer.innerText = Time;
-      if (Time == 0) {
-        localStorage.setItem('score', score);
-        window.location.href = './gameover.html';
-      }
-    }, 1000);
-  }
-  ResetTime();
+    if (Time == 0) {
+      localStorage.setItem('score', score);
+      window.location.href = './gameover.html';
+    }
+  }, 1000);
+}
+ResetTime();
 
-  // basket movement
+// basket movement
 let isDragging = false;
 let offsetX;
 
@@ -26,25 +27,25 @@ let basketdiv = document.getElementById("basketdiv");
 let basket = document.getElementById("basket");
 
 basket.addEventListener("mousedown", function (event) {
-    isDragging = true;
-    offsetX = event.clientX - basket.getBoundingClientRect().left;
+  isDragging = true;
+  offsetX = event.clientX - basket.getBoundingClientRect().left;
 });
 
 document.addEventListener("mousemove", function (event) {
-    if (isDragging) {
-        const newX = event.clientX - offsetX;
+  if (isDragging) {
+    const newX = event.clientX - offsetX;
 
-        // this is to prevent basket moving off the left edge
-        const minLeft = 0;
+    // this is to prevent basket moving off the left edge
+    const minLeft = 0;
 
-        // this is to calculate the maximum position allowed for the right edge
-        const maxRight = document.documentElement.clientWidth - basket.clientWidth;
-        basket.style.left = Math.min(maxRight, Math.max(minLeft, newX)) + "px";
-    }
+    // this is to calculate the maximum position allowed for the right edge
+    const maxRight = document.documentElement.clientWidth - basket.clientWidth;
+    basket.style.left = Math.min(maxRight, Math.max(minLeft, newX)) + "px";
+  }
 });
 
 document.addEventListener("mouseup", function (event) {
-    isDragging = false;
+  isDragging = false;
 });
 
 let desserts = [
@@ -58,7 +59,6 @@ let desserts = [
 
 let sweetsId = 0;
 
-
 let sweetsContainer = document.getElementById("sweets");
 
 function createSweets() {
@@ -69,9 +69,9 @@ function createSweets() {
   newSweet.alt = randomSweets;
   newSweet.className = "skygift";
   newSweet.id = "sweets-" + sweetsId;
-  newSweet.style.position="absolute";
-  newSweet.style.width="6%";
-  console.log(sweetsContainer,newSweet)
+  newSweet.style.position = "absolute";
+  newSweet.style.width = "6%";
+  console.log(sweetsContainer, newSweet);
   sweetsContainer.appendChild(newSweet);
 
   let translateRandomNumber = Math.floor(Math.random() * (1100 - 210)) + 210;
@@ -81,41 +81,35 @@ function createSweets() {
   let randomSecondsNumber = Math.floor(Math.random() * (2 - 1)) + 1;
   newSweet.style.animationDuration = `${randomSecondsNumber}s`;
 
-  function check(){
-    // console.log(newSweet.getBoundingClientRect().bottom)
-    if (newSweet.getBoundingClientRect().bottom>=817){
-      sweetsContainer.removeChild(newSweet)
+  function check() {
+    if (newSweet.getBoundingClientRect().bottom >= 817) {
+      sweetsContainer.removeChild(newSweet);
       sweetsId++;
-      score-=1;
-      scorespan.innerText=score;
+      score -= 1;
+      scorespan.innerText = "Score:"+score;
       // createSweets()
-    }
-    else if (detectCollision(newSweet,basket)){
+    } else if (detectCollision(newSweet, basket)) {
       collision(newSweet);
     }
   }
   setInterval(check, 30);
-
 }
 
-setInterval(createSweets,1600);
+setInterval(createSweets, 1600);
 
 //collision occurs
-
-function collision(newSweet){
+function collision(newSweet) {
   newSweet.style.display = "none";
   score++;
-  scorespan.innerText=score;
+  scorespan.innerText = "Score:"+score;
 }
-collision(newSweet,basket);
 
 function detectCollision(element1, element2) {
   let rect1 = element1.getBoundingClientRect();
   let rect2 = element2.getBoundingClientRect();
-  
-  return !(rect1.right <= rect2.left || 
-      rect1.left >= rect2.right || 
-      rect1.bottom <= rect2.top || 
-      rect1.top >= rect2.bottom);
-  }
 
+  return !(rect1.right <= rect2.left ||
+    rect1.left >= rect2.right ||
+    rect1.bottom <= rect2.top ||
+    rect1.top >= rect2.bottom);
+}

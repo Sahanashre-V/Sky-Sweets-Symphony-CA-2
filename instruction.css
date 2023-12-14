@@ -19,42 +19,17 @@ h1{
     text-align: center;
     color:#012afa;
     -webkit-text-stroke: 5px white;
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: 'Licorice', cursive;
 }
 
-.story-box {
-    background-color: rgba(30, 164, 231, 0.7); /* Adjust the transparency here */
-    padding: 20px;
-    border-radius: 10px;
-    height: 27vh;
-}
 
-#typing-text {
-    margin: 0;
-    white-space: pre-line;
-    font-size: 1.5rem;
-   
-}
 span{
     text-align: center;
-    /* color:#012afa; */
-    /* -webkit-text-stroke: 5px white; */
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: 'Licorice', cursive;
-    /* -webkit-text-stroke: 1px rgb(0 33 255 / 45%); */
     color: black;
 
-}
-.instruction-box{
-    background-color:rgba(30, 164, 231, 0.7) ; /* Adjust the transparency here */
-    padding: 10px;
-    width: fit-content;
-    border-radius: 10px;
-    display: none;
-    cursor: pointer;
-    box-sizing:content-box;
-    margin-left: 80px;
 }
 
 ul > li{
@@ -64,23 +39,41 @@ ul > li{
     white-space: pre-line;
 }
 
-#instruction-btn{
-    background-color: #1df736b0;
-    color:white;
-    padding:7px;
-    border: none;
-    font-size: 1.6rem;
-    border-radius: 5px;
-    margin-left: 65%;
+.text{
+    background-color:rgba(30, 164, 231, 0.7) ;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing:content-box;
+    margin-left: 5px;
 }
 
+
 #playbtn{
-        background-color: #1df736b0;
+        background-color:#2cf71dcc;
         color:white;
         padding:7px;
         border: none;
         font-size: 1.6rem;
         border-radius: 5px;
         margin-left: 65%;
-        display: none;
 }
+
+/* chocolate shower animation*/
+.chocolate {
+    position: fixed;
+    font-size: 1.5rem;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear forwards;
+}  
+
+@keyframes fall {
+    from {
+       transform: translateY(0vh) translateX(-10vw); 
+    }
+    to {
+       transform: translateY(105vh) translateX(10vw); 
+    }
+  }

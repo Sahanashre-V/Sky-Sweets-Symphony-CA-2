@@ -1,8 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
-
-
 body{
     background-image: url("./assets/saha.png");
     background-size: cover;
@@ -15,21 +11,21 @@ body{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: 'Love Ya Like A Sister', cursive;
+    font-family:cursive;
 }
 
 form {
+    background-color: rgb(94, 22, 239);
+    height: 40vh;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: gold;
-    height: 40vh;
-    width: 25vw;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 20px;
     font-size: 1rem;
-    border: 5px solid black;
+    border: 3px solid black;
 }
 
 #playbtn {
@@ -38,17 +34,17 @@ form {
     padding: 3px 10px;
     margin-top: 10px;
     font-size: 1.5rem;
-    cursor: pointer;
     border-radius: 10px;
     width: 50%;
+    border: 3px solid black;
 }
 
 #topic {
-    font-size: 10rem;
-    font-family: 'Licorice', cursive;
-    -webkit-text-stroke: 1px rgb(0 33 255 / 45%);
+    font-size: 4.8rem;
+    font-family:'Licorice', cursive;
     color: black;
     text-align: center;
+    -webkit-text-stroke: 3px white;
 }
 
 #container{
@@ -62,7 +58,7 @@ form {
 }
 
 input {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 250px;
     border-radius: 5px;
     border: 3px solid black;
