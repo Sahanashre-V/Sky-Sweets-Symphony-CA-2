@@ -32,9 +32,9 @@ h1{
     left:0%;
 }
 
+/* skygift is a class for all the falling desserts */
 .skygift {
     display: block;
-    /* position: absolute; */
     transform: translate(100%, -100%);
     animation: fall 3s linear infinite;
 }

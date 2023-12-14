@@ -58,6 +58,7 @@ ul > li{
         font-size: 1.6rem;
         border-radius: 5px;
         margin-left: 65%;
+        cursor: pointer;
 }
 
 /* chocolate shower animation*/

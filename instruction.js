@@ -1,3 +1,8 @@
+//background music
+let bgmSound = new Audio("./assets/Bg.mp3");
+bgmSound.loop = true;
+bgmSound.play();
+bgmSound.volume = 0.4;
 
 playbtn.addEventListener("click",function(){
     window.location.href="./newgame.html"

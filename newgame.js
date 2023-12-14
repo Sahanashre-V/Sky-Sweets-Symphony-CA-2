@@ -1,3 +1,10 @@
+//background music
+let bgmSound = new Audio("./assets/Bg.mp3");
+bgmSound.loop = true;
+bgmSound.play();
+bgmSound.volume = 0.4;
+
+
 let timer = document.getElementById("time");
 let scorespan = document.getElementById("score");
 let timeoutId;
@@ -19,18 +26,21 @@ function ResetTime() {
 }
 ResetTime();
 
-// basket movement
+
+// basket movement 
 let isDragging = false;
 let offsetX;
 
 let basketdiv = document.getElementById("basketdiv");
 let basket = document.getElementById("basket");
 
+//mousedown is clicking on the mouse, so that we can drag.
 basket.addEventListener("mousedown", function (event) {
   isDragging = true;
   offsetX = event.clientX - basket.getBoundingClientRect().left;
 });
 
+//dragging the mouse
 document.addEventListener("mousemove", function (event) {
   if (isDragging) {
     const newX = event.clientX - offsetX;
@@ -44,10 +54,12 @@ document.addEventListener("mousemove", function (event) {
   }
 });
 
+//after dragging leaving the mouse, so that it will be in new position 
 document.addEventListener("mouseup", function (event) {
   isDragging = false;
 });
 
+// images which will fall are given in an array
 let desserts = [
   "./assets/Image1.png",
   "./assets/Image2.png",
@@ -61,9 +73,12 @@ let sweetsId = 0;
 
 let sweetsContainer = document.getElementById("sweets");
 
+//creating a function for random desserts which will fall from the sky
 function createSweets() {
   let randomSweets = desserts[Math.floor(Math.random() * desserts.length)];
-  console.log(randomSweets);
+  // console.log(randomSweets);
+
+  //image tag is created and adding source, id, class to it.
   let newSweet = document.createElement("img");
   newSweet.src = randomSweets;
   newSweet.alt = randomSweets;
@@ -71,24 +86,26 @@ function createSweets() {
   newSweet.id = "sweets-" + sweetsId;
   newSweet.style.position = "absolute";
   newSweet.style.width = "6%";
-  console.log(sweetsContainer, newSweet);
-  sweetsContainer.appendChild(newSweet);
+  sweetsContainer.appendChild(newSweet);  
 
+//viewport of the screen
   let translateRandomNumber = Math.floor(Math.random() * (1100 - 210)) + 210;
   newSweet.style.left = `${translateRandomNumber}px`;
   check();
 
+  //random number created for animation duration 
   let randomSecondsNumber = Math.floor(Math.random() * (2 - 1)) + 1;
   newSweet.style.animationDuration = `${randomSecondsNumber}s`;
 
+
   function check() {
     if (newSweet.getBoundingClientRect().bottom >= 817) {
-      sweetsContainer.removeChild(newSweet);
+      sweetsContainer.removeChild(newSweet);  //because sweet crossed the viewpoint at bottom 
       sweetsId++;
       score -= 1;
       scorespan.innerText = "Score:"+score;
-      // createSweets()
-    } else if (detectCollision(newSweet, basket)) {
+    } 
+    else if (collisionBetweenBasketAndDessert(newSweet, basket)) {
       collision(newSweet);
     }
   }
@@ -97,19 +114,27 @@ function createSweets() {
 
 setInterval(createSweets, 1600);
 
-//collision occurs
+//during collision
 function collision(newSweet) {
   newSweet.style.display = "none";
   score++;
   scorespan.innerText = "Score:"+score;
+
+  // during collision sound 
+  let collisionSound = new Audio("./assets/collisionsound.mp3");
+  collisionSound.play();
+  collisionSound.volume = 0.8;
+};
+
+//collision detection
+function collisionBetweenBasketAndDessert(element1, element2) {
+  let DessertFallingFromSky = element1.getBoundingClientRect();
+  let movableBasket = element2.getBoundingClientRect();
+
+  return !(DessertFallingFromSky.right <= movableBasket.left || // these conditions are checking for situations where there is no overlap between dessert and basket.
+    DessertFallingFromSky.left >= movableBasket.right || 
+    DessertFallingFromSky.bottom <= movableBasket.top ||
+    DessertFallingFromSky.top >= movableBasket.bottom);
 }
 
-function detectCollision(element1, element2) {
-  let rect1 = element1.getBoundingClientRect();
-  let rect2 = element2.getBoundingClientRect();
-
-  return !(rect1.right <= rect2.left ||
-    rect1.left >= rect2.right ||
-    rect1.bottom <= rect2.top ||
-    rect1.top >= rect2.bottom);
-}
+//If the combined condition is true (indicating no overlap), ! makes it false. If the combined condition is false (indicating overlap), ! makes it true.
