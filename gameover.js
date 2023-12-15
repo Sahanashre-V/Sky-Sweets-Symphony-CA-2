@@ -23,7 +23,9 @@ let randomWinningMessages = [
     "Sweet success! Your dessert-catching skills are unmatched!",
     "Dessert champion! High score and a tasty collection—fantastic!",
     "Top-notch Dessert Catcher! Your basket skills are truly delightful.",
-    "You're the Sweet Sky Champion! A heavenly collection of desserts!"
+    "You're the Sweet Sky Champion! A heavenly collection of desserts!",
+    "You're a dessert-catching virtuoso! Sweet victory is yours!",
+    "In the sweet symphony of Confectionville, you're the maestro!"
 ]
 
 // creating random messages for loser
@@ -31,11 +33,13 @@ let randomLoserMessages = [
     "Oops, a miss! Practice makes the perfect Dessert Catcher!",
     "Missed a few, but the next round is your sweet comeback!",
    "A hiccup in the sweetness journey. Ready for the rebound!",
-   "Missed a couple, but your dessert-catching journey continues!"
+   "Missed a couple, but your dessert-catching journey continues!",
+   "Don't let a miss discourage you! The next catch awaits!",
+   "A small setback in Confectionville - the sweetness continues!"
 ]
 
 // creating random number for random winning and losing messages
-let randnumForWinOrLose = Math.floor(Math.random()*4)
+let randnumForWinOrLose = Math.floor(Math.random()*6)
 
 let scorespan = document.getElementById("scorespan");
 let score = localStorage.getItem("score");

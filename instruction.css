@@ -12,7 +12,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    color: #fff; /* Text color */
+    color: #fff; 
 }
 
 h1{
@@ -23,7 +23,6 @@ h1{
     font-family: 'Licorice', cursive;
 }
 
-
 span{
     text-align: center;
     font-size: 3rem;
@@ -32,6 +31,7 @@ span{
 
 }
 
+/* styling for unordered list  */
 ul > li{
     color:white;
     font-size: 1.3rem;

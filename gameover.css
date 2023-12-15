@@ -6,6 +6,7 @@ body{
     width: 100vw;
     overflow: hidden;
 }
+
 .container{
     height:100vh;
     width:100vw;
@@ -13,19 +14,24 @@ body{
     display: flex;
     justify-content: center;
 }
+
+/* random generating text for winning and losing */
 #congratulations{
     color:papayawhip;
     text-align: center;
     font-size: 2rem;
     font-family: 'Licorice', cursive;
 }
+
 #exit{
     text-align: center;
     padding-top: 30px;
 }
+
 #scoreboard{
     text-align: center;
 }
+
 .box{
     background-color: rgb(30 213 231 / 70%);
     margin-top: 13%;
@@ -34,6 +40,8 @@ body{
     border-radius: 10px;
     height:28%;
 }
+
+/* playagain button */
 #playagain{
     padding: 10px;
     color:white;
@@ -42,6 +50,8 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* exit button */
 #exitgame{
     padding: 10px;
     color:white;
@@ -50,10 +60,12 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+
 #exit{
     display: flex;
     justify-content: space-between;
 }
+
 span{
     font-size:1.8rem;
 }
@@ -67,6 +79,7 @@ span{
     animation: fall 3s linear forwards;
 }  
 
+/* animation for chocolate shower */
 @keyframes fall {
     from {
        transform: translateY(0vh) translateX(-10vw); 
