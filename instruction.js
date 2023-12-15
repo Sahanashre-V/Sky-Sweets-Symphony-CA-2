@@ -4,9 +4,21 @@ bgmSound.loop = true;
 bgmSound.play();
 bgmSound.volume = 0.4;
 
-playbtn.addEventListener("click",function(){
-    window.location.href="./newgame.html"
 
+// Event listener for the loadeddata event
+// bgmSound.addEventListener("loadeddata", function() {
+//     bgmSound.play();
+// });
+
+
+
+let playbtn = document.getElementById("playbtn")
+let texts = document.querySelector(".texts")
+playbtn.addEventListener("click",function(){
+    texts.style.display = "none";
+    playbtn.style.display = "none";
+            typeText();
+    playgame.style.display = "block";        
 })
 
 
@@ -28,3 +40,25 @@ function createChocolate() {
   }
   
   setInterval(createChocolate, 300);
+
+
+  const text = "For Mobile Users: If you are playing on a mobile device, kindly touch and drag the basket to catch the falling sweets. \n \n For Laptop/Desktop Users: If you are using a laptop, click and drag the mouse to catch the falling sweets.";
+
+let index = 0;
+
+function typeText() {
+    const typingText = document.getElementById("typing-text");
+    typingText.innerHTML += text[index]; // Use innerHTML instead of textContent
+    typingText.classList.add("floatingletters");
+    index++;
+
+    if (index < text.length) {
+        setTimeout(typeText, 30); 
+    }
+}
+
+playgame = document.getElementById("playgame");
+playgame.addEventListener("click",function(){
+    window.location.href="./newgame.html";
+})
+

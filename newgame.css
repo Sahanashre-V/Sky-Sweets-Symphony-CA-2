@@ -47,13 +47,9 @@ h1 {
 /* mobile responsive */
 @media screen and (min-width: 325px) and (max-width: 600px) {
   body {
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     height: 100vh;
-        width: 100vw;
-    /* width: 325px;
-    height: 700px; */
-    /* background-size:contain; */
-    /* background-image:url("./assets/mobilebg.png"); */
+    width: 100vw;
     background-size:cover;
 
   }

@@ -34,15 +34,15 @@ let offsetX;
 let basketdiv = document.getElementById("basketdiv");
 let basket = document.getElementById("basket");
 
-//mousedown is clicking on the mouse, so that we can drag.
-//mousedown is clicking on the mouse, so that we can drag.
+// moving basket in mobile
+// started to drag the basket
 if (window.innerWidth <= 600) {
   basket.addEventListener("touchstart", function (event) {
     isDragging = true;
     offsetX = event.touches[0].clientX - basket.getBoundingClientRect().left;
   });
 
-  //dragging the mouse
+  //dragging the basket
   document.addEventListener("touchmove", function (event) {
     if (isDragging) {
       const newX = event.touches[0].clientX - offsetX;
@@ -56,12 +56,14 @@ if (window.innerWidth <= 600) {
     }
   });
 
-  //after dragging leaving the mouse, so that it will be in new position 
+  // dragging completed 
   document.addEventListener("touchend", function (event) {
     isDragging = false;
   });
 }
 
+// for laptop/desktop
+//mousedown is clicking on the mouse, so that we can drag.
 else{
 basket.addEventListener("mousedown", function (event) {
   isDragging = true;
@@ -87,6 +89,8 @@ document.addEventListener("mouseup", function (event) {
   isDragging = false;
 });
 }
+
+
 // images which will fall are given in an array
 let desserts = [
   "./assets/Image1.png",
@@ -119,10 +123,6 @@ function createSweets() {
 //viewport of the screen
   let translateRandomNumber = Math.floor(Math.random() * (window.innerWidth - newSweet.clientWidth));
 
-  // const screenwidth = window.innerWidth;
-  // const dessertwidth = newSweet. clientWidth;
-  // const maxTranslateX = screenwidth - dessertwidth;
-  // let viewWidth = 
   newSweet.style.left = `${translateRandomNumber}px`;
   check();
 
