@@ -35,7 +35,7 @@ let basketdiv = document.getElementById("basketdiv");
 let basket = document.getElementById("basket");
 
 //mousedown is clicking on the mouse, so that we can drag.
-if (document.body.innerWidth<=600){
+if (document.body.innerWidth<=600+"px"){
   basket.addEventListener("touchstart", function (event) {
     isDragging = true;
     offsetX = event.clientX - basket.getBoundingClientRect().left;
