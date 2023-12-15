@@ -83,7 +83,7 @@ ul > li{
   @media screen and (max-width: 600px) {
     h1 {
         font-size: 2.5rem;
-        -webkit-text-stroke: 2px white;
+        -webkit-text-stroke: 1px white;
     }
 
     span {

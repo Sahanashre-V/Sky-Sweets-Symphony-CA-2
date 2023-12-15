@@ -89,7 +89,12 @@ function createSweets() {
   sweetsContainer.appendChild(newSweet);  
 
 //viewport of the screen
-  let translateRandomNumber = Math.floor(Math.random() * (1100 - 210)) + 210;
+  let translateRandomNumber = Math.floor(Math.random() * (window.innerWidth - newSweet.clientWidth));
+
+  // const screenwidth = window.innerWidth;
+  // const dessertwidth = newSweet. clientWidth;
+  // const maxTranslateX = screenwidth - dessertwidth;
+  // let viewWidth = 
   newSweet.style.left = `${translateRandomNumber}px`;
   check();
 

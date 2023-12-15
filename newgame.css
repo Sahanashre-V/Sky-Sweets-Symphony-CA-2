@@ -1,76 +1,82 @@
-.header{
-        display: flex;
-        justify-content: space-evenly;
-        border-radius: 20px;
-        background-color: rgb(232 154 52 / 74%);  
-        gap: 800px;
-        margin: 10px;
-        padding: 5px;
-        width: 97%; 
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  background-color: rgb(232 154 52 / 74%);
+  gap: 800px;
+  margin: 10px;
+  padding: 5px;
+  width: 97%;
 }
 
-body{
-    background-image: url("./assets/Finalgamepage.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    height:100vh;
+body {
+  background-image: url("./assets/Finalgamepage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
 }
 
-h1{
-    color:black;
+h1 {
+  color: black;
 }
 
-.container{
-    height:100vh;
-    width: 100vw;
-} 
+.container {
+  height: 100vh;
+  width: 100vw;
+}
 
-#basket{
-    position:absolute;
-    width:10%;
-    top:70%;
-    left:0%;
+#basket {
+  position: absolute;
+  width: 10%;
+  top: 70%;
+  left: 0%;
 }
 
 /* skygift is a class for all the falling desserts */
 .skygift {
-    display: block;
-    transform: translate(100%, -100%);
-    animation: fall 3s linear infinite;
+  display: block;
+  transform: translate(100%, -100%);
+  animation: fall 3s linear infinite;
 }
 
 .sweets {
-    width: 100vw;
+  width: 100vw;
 }
 
 /* mobile responsive */
-@media screen and (max-width: 600px) {
-    #gamebody {
-        background-attachment: fixed;
-        height: 100vh;
+@media screen and (min-width: 325px) and (max-width: 600px) {
+  body {
+    /* background-attachment: fixed; */
+    height: 100vh;
         width: 100vw;
-    }
+    /* width: 325px;
+    height: 700px; */
+    /* background-size:contain; */
+    /* background-image:url("./assets/mobilebg.png"); */
+    background-size:cover;
 
-    #basket {
-        width: 35%;
-    }
+  }
 
-    .header{
-        gap: 60px;
-        font-size: 0.8rem;
-    }
-    .sweets img{
-        width:40%;
-    }
+  #basket {
+    width: 35%;
+  }
+
+  .header {
+    gap: 60px;
+    font-size: 0.8rem;
+  }
+  .sweets img {
+    width: 40%;
+  }
 }
 
 /* animation for desserts */
 @keyframes fall {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(100vh);
-    }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100vh);
+  }
 }
