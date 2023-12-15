@@ -84,13 +84,15 @@ span{
     
     #playagain,
     #exitgame {
-        width: 40%;
+        width: 35%;
+        font-size: 0.8rem;
     }
 
     .box{
      background-color: rgb(30 213 231 / 70%);
      margin-top: 40%;
-     width:80%;
+     width:fit-content;
+     height:fit-content;
 }
 }
 
