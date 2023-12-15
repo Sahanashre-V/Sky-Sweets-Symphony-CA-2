@@ -18,11 +18,32 @@ exitgame.addEventListener("click",function(){
     window.location.href=("https://kalvium.community/")
 })
 
+// creating random messages for winner
+let randomWinningMessages = [
+    "Sweet success! Your dessert-catching skills are unmatched!",
+    "Dessert champion! High score and a tasty collection—fantastic!",
+    "Top-notch Dessert Catcher! Your basket skills are truly delightful.",
+    "You're the Sweet Sky Champion! A heavenly collection of desserts!"
+]
+
+// creating random messages for loser
+let randomLoserMessages = [
+    "Oops, a miss! Practice makes the perfect Dessert Catcher!",
+    "Missed a few, but the next round is your sweet comeback!",
+   "A hiccup in the sweetness journey. Ready for the rebound!",
+   "Missed a couple, but your dessert-catching journey continues!"
+]
+
+// creating random number for random winning and losing messages
+let randnumForWinOrLose = Math.floor(Math.random()*4)
 
 let scorespan = document.getElementById("scorespan");
 let score = localStorage.getItem("score");
 if(score<=0){
-    zeroscore.innerHTML = "Oops! You missed the sweetness!"
+    zeroscore.innerHTML = randomLoserMessages[randnumForWinOrLose]
+}
+else if (score>0) {
+    zeroscore.innerHTML = randomWinningMessages[randnumForWinOrLose]
 }
 
 let playernameFromStorage = localStorage.getItem("playername")
