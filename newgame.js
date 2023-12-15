@@ -62,7 +62,7 @@ if (window.innerWidth <= 600) {
   });
 }
 
-// for laptop/desktop
+// basket movement for laptop/desktop
 //mousedown is clicking on the mouse, so that we can drag.
 else{
 basket.addEventListener("mousedown", function (event) {
@@ -108,7 +108,6 @@ let sweetsContainer = document.getElementById("sweets");
 //creating a function for random desserts which will fall from the sky
 function createSweets() {
   let randomSweets = desserts[Math.floor(Math.random() * desserts.length)];
-  // console.log(randomSweets);
 
   //image tag is created and adding source, id, class to it.
   let newSweet = document.createElement("img");

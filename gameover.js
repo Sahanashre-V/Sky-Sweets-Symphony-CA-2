@@ -47,6 +47,7 @@ if(score<=0){
     
     zeroscore.innerHTML = randomLoserMessages[randnumForWinOrLose]
 }
+
 else if (score>0) {
     zeroscore.innerHTML = randomWinningMessages[randnumForWinOrLose]
 }

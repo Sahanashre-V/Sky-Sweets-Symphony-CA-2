@@ -140,4 +140,7 @@ ul > li{
     body{
         background-repeat: no-repeat;
     }
+    .story-box{
+        margin-left: 28%;
+    }
 }

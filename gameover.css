@@ -94,6 +94,11 @@ span{
      width:fit-content;
      height:fit-content;
 }
+    body{
+        background-attachment: fixed;
+        position: relative;
+    }
+
 }
 
 /* animation for chocolate shower */
