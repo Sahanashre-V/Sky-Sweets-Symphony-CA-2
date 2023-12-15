@@ -79,6 +79,21 @@ span{
     animation: fall 3s linear forwards;
 }  
 
+/* mobile responsive */
+@media screen and (max-width: 600px) {
+    
+    #playagain,
+    #exitgame {
+        width: 40%;
+    }
+
+    .box{
+     background-color: rgb(30 213 231 / 70%);
+     margin-top: 40%;
+     width:80%;
+}
+}
+
 /* animation for chocolate shower */
 @keyframes fall {
     from {

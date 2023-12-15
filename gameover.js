@@ -44,6 +44,7 @@ let randnumForWinOrLose = Math.floor(Math.random()*6)
 let scorespan = document.getElementById("scorespan");
 let score = localStorage.getItem("score");
 if(score<=0){
+    
     zeroscore.innerHTML = randomLoserMessages[randnumForWinOrLose]
 }
 else if (score>0) {

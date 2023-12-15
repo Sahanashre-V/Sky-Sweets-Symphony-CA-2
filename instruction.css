@@ -78,3 +78,31 @@ ul > li{
        transform: translateY(105vh) translateX(10vw); 
     }
   }
+
+  /* mobile responsive */
+  @media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+        -webkit-text-stroke: 2px white;
+    }
+
+    span {
+        font-size: 1.8rem;
+    }
+
+    ul > li {
+        font-size: 1rem;
+    }
+
+    #playbtn {
+        font-size: 1.3rem;
+    }
+
+    .text {
+        width: fit-content;
+    }
+
+    body{
+        background-repeat: no-repeat;
+    }
+}

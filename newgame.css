@@ -9,7 +9,7 @@
         width: 97%; 
 }
 
-#gamebody{
+body{
     background-image: url("./assets/Finalgamepage.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,6 +42,27 @@ h1{
 
 .sweets {
     width: 100vw;
+}
+
+/* mobile responsive */
+@media screen and (max-width: 600px) {
+    #gamebody {
+        background-attachment: fixed;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #basket {
+        width: 35%;
+    }
+
+    .header{
+        gap: 60px;
+        font-size: 0.8rem;
+    }
+    .sweets img{
+        width:40%;
+    }
 }
 
 /* animation for desserts */
