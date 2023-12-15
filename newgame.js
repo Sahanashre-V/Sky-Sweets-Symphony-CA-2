@@ -35,31 +35,33 @@ let basketdiv = document.getElementById("basketdiv");
 let basket = document.getElementById("basket");
 
 //mousedown is clicking on the mouse, so that we can drag.
-if (document.body.innerWidth<=600+"px"){
+//mousedown is clicking on the mouse, so that we can drag.
+if (window.innerWidth <= 600) {
   basket.addEventListener("touchstart", function (event) {
     isDragging = true;
-    offsetX = event.clientX - basket.getBoundingClientRect().left;
+    offsetX = event.touches[0].clientX - basket.getBoundingClientRect().left;
   });
-  
+
   //dragging the mouse
   document.addEventListener("touchmove", function (event) {
     if (isDragging) {
-      const newX = event.clientX - offsetX;
-  
+      const newX = event.touches[0].clientX - offsetX;
+
       // this is to prevent basket moving off the left edge
       const minLeft = 0;
-  
+
       // this is to calculate the maximum position allowed for the right edge
-      const maxRight = document.documentElement.clientWidth - basket.clientWidth;
+      const maxRight = window.innerWidth - basket.clientWidth;
       basket.style.left = Math.min(maxRight, Math.max(minLeft, newX)) + "px";
     }
   });
-  
+
   //after dragging leaving the mouse, so that it will be in new position 
   document.addEventListener("touchend", function (event) {
     isDragging = false;
   });
 }
+
 else{
 basket.addEventListener("mousedown", function (event) {
   isDragging = true;
