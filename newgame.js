@@ -51,7 +51,7 @@ if (window.innerWidth <= 600) {
       const minLeft = 0;
 
       // this is to calculate the maximum position allowed for the right edge
-      const maxRight = window.innerWidth - basket.clientWidth;
+      const maxRight = window.innerWidth - basket.clientWidth;       //client width gives inner width of an element including padding, but excludes margin and border.
       basket.style.left = Math.min(maxRight, Math.max(minLeft, newX)) + "px";
     }
   });
